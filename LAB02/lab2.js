@@ -39,27 +39,27 @@ prompt.get(schema, function(err, result) {
         
         // Make the human selection
         if(seed < 0.34) {
-            let computerSelection = 'PAPER';
+            var computerSelection = 'PAPER';
         } else if(seed <= 0.67) {
-            let computerSelection = 'SCISSORS';
+            var computerSelection = 'SCISSORS';
         } else {
-            let computerSelection = 'ROCK';
+            var computerSelection = 'ROCK';
         }
         console.log("The computer chose: " + computerSelection);
 
         // Compare the selections strictly with triple =
         if(userSelection === computerSelection) {
-            let outcome = "It's a tie";
+            var verdict = "It's a tie";
         } // Checks all cases when the user wins
         else if ((userSelection === 'ROCK' && computerSelection === 'SCISSORS') || 
                 (userSelection === 'PAPER' && computerSelection === 'ROCK') || 
                 (userSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
-            let outcome = "User Wins";
+            var verdict = "User Wins";
         } else {
-            let outcome = "Computer Wins";
+            var verdict = "Computer Wins";
         }
 
-        console.log(outcome);
+        console.log(verdict);
     }
 })
 
