@@ -59,10 +59,12 @@ prompt.get(schema, function(err, result) {
             var verdict = "Computer Wins";
         }
 
+        // Output the winner
         console.log(verdict);
     }
 })
 
+// Function to handle errors
 function onError(err) {
     console.log(err);
     return 1;
