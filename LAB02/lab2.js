@@ -18,6 +18,7 @@ var schema = {
             pattern: /^(ROCK|PAPER|SCISSORS)$/i,
             message: 'You have to choose, ROCK, PAPER, or SCISSORS',
             required: true,
+            // Convert the input to all uppercase for easier comparing
             before: function(value) { return value.toUpperCase(); }
         }
     }
@@ -38,13 +39,27 @@ prompt.get(schema, function(err, result) {
         
         // Make the human selection
         if(seed < 0.34) {
-            var computerSelection = 'PAPER';
+            let computerSelection = 'PAPER';
         } else if(seed <= 0.67) {
-            var computerSelection = 'SCISSORS';
+            let computerSelection = 'SCISSORS';
         } else {
-            var computerSelection = 'ROCK';
+            let computerSelection = 'ROCK';
         }
         console.log("The computer chose: " + computerSelection);
+
+        // Compare the selections strictly with triple =
+        if(userSelection === computerSelection) {
+            let outcome = "It's a tie";
+        } // Checks all cases when the user wins
+        else if ((userSelection === 'ROCK' && computerSelection === 'SCISSORS') || 
+                (userSelection === 'PAPER' && computerSelection === 'ROCK') || 
+                (userSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
+            let outcome = "User Wins";
+        } else {
+            let outcome = "Computer Wins";
+        }
+
+        console.log(outcome);
     }
 })
 
