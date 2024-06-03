@@ -48,12 +48,12 @@ prompt.get(schema, function(err, result) {
         console.log("The computer chose: " + computerSelection);
 
         // Compare the selections strictly with triple =
-        if(userSelection === computerSelection) {
+        if(result.userSelection === computerSelection) {
             var verdict = "It's a tie";
         } // Checks all cases when the user wins
-        else if ((userSelection === 'ROCK' && computerSelection === 'SCISSORS') || 
-                (userSelection === 'PAPER' && computerSelection === 'ROCK') || 
-                (userSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
+        else if ((result.userSelection === 'ROCK' && computerSelection === 'SCISSORS') || 
+                (result.userSelection === 'PAPER' && computerSelection === 'ROCK') || 
+                (result.userSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
             var verdict = "User Wins";
         } else {
             var verdict = "Computer Wins";
