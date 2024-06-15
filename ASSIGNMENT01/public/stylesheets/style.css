@@ -211,6 +211,59 @@ main>section:first-child {
     min-width: 15em;
 }
 
+
+.about-page {
+    order: 2;
+    display: flex;
+    padding: 5em;
+    background-color: var(--primary);
+    border: 2px var(--tertiary) solid;
+}
+/* LoVe Fears HAte */
+.about-page a:link {
+    color: var(--secondary);
+}
+
+.about-page a:visited {
+    color: var(--secondary-dark);
+}
+
+.about-page a:focus {
+    color: var(--tertiary);
+}
+
+.about-page a:hover {
+    color: var(--tertiary);
+}
+
+.about-page a:active {
+    color: var(--light);
+}
+
+.about-page div:first-child {
+    padding-right: 4vw;
+    flex-basis: 70%;
+}
+
+.about-page div:last-child {
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.about-page img {
+    min-width: 10vw;
+    width: 100%;
+    height: auto;
+    border-radius: 4em;
+    border: 1px solid var(--secondary);
+    margin-top: 3 vw;
+}
+
+.about-page img:hover {
+    filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.5));
+}
+
 /* ------------------  Projects Section  ------------------ */
 main section:last-child {
     display: flex;
@@ -325,30 +378,14 @@ footer {
     width: 100%;
 }
 
-.feet {
-    margin: 10vh auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 80vw;
+/* Contact Page */
+.contact {
+    background: var(--secondary-light);
 }
 
-.social div {
-    display: flex;
-    align-items: center;
-    margin: 3em 0;
+.contact>div {
+    padding: 15em 5em;
 }
-
-.feet>div:last-child {
-    margin: 3em 0;
-}
-
-.social-icon {
-    width: 5em;
-    height: auto;
-    padding-right: 3em;
-}
-
 
 /* Smooth Scroll media query */
 @media(prefers-reduced-motion:no-preference) {
