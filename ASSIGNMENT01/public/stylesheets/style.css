@@ -1,12 +1,6 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+section {
+    background: var(--secondary-light);
 }
-
-a {
-  color: #00B7FF;
-}
-
 
 /* LoVe Fears HAte */
 a:link {
@@ -71,6 +65,7 @@ header {
     border-top-left-radius: 5em;
     border-bottom-left-radius: 5em;
     margin-top: 8vh;
+    margin-left: auto;
     margin-bottom: auto;
     border: 2px solid black;
 }
@@ -98,6 +93,14 @@ header {
 
 .navbar a {
     text-decoration: none;
+}
+
+.navbar-brand {
+  padding-left: 3em;
+}
+
+.navbar-collapse {
+  padding-right: 2em;
 }
 
 /* ------------------  About Me Section  ------------------ */
