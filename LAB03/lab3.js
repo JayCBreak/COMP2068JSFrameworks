@@ -12,6 +12,16 @@ const url = require('url');
 
 // Function to do the calculation 
 function calc(req, res) {
+    // Setup variables for operation, and x and y numbers
+    const query = url.parse(req.url, true).query;
+    const method = query.method;
+    const x = parseFloat(query.x);
+    const y = parseFloat(query.y);
+
+    /// Output variables
+    let result;
+    let operation;
+    
 }
 
 // Setup web server
