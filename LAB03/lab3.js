@@ -21,7 +21,31 @@ function calc(req, res) {
     /// Output variables
     let result;
     let operation;
-    
+
+    switch(method) {
+        case 'add':
+            result = x + y;
+            operation = '+';
+            break;
+        case 'subtract':
+            result = x - y;
+            operation = '-';
+            break;
+        case 'multiply':
+            result = x * y;
+            operation = '*';
+            break;
+        case 'divide':
+            result = x / y;
+            operation = '/';
+            break;
+        default:
+            res.end('Invalid method');
+            return;
+    }
+
+    res.end(`${x} ${operation} ${y} = ${result}`);
+
 }
 
 // Setup web server
