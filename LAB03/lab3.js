@@ -22,7 +22,10 @@ function calc(req, res) {
     let result;
     let operation;
 
+    // Switch block to handle all cases
     switch(method) {
+        // For each operation a different calculation is done
+        // The result is stored along with the operation completed
         case 'add':
             result = x + y;
             operation = '+';
@@ -44,6 +47,7 @@ function calc(req, res) {
             return;
     }
 
+    // Output calculation in proper format
     res.end(`${x} ${operation} ${y} = ${result}`);
 
 }
