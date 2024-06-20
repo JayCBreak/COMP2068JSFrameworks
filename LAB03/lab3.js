@@ -10,11 +10,16 @@
 const connect = require('connect');
 const url = require('url');
 
+function calculate(req, res) {
+}
+
 const app = connect();
 
 app.use((req, res) => {
     if (req.url.startsWith('/lab3')) {
-        res.end('Valid URL');
+        calculate(req, res);
+    } else {
+        res.end('Invalid URL');
     }
 });
 
