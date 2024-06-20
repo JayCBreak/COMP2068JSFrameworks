@@ -6,23 +6,26 @@
  * 
  * Create a basic calculator in node js with a connect server
 */
-
+// Imports
 const connect = require('connect');
 const url = require('url');
 
-function calculate(req, res) {
+// Function to do the calculation 
+function calc(req, res) {
 }
 
+// Setup web server
 const app = connect();
-
+// Create the valid page routes
 app.use((req, res) => {
     if (req.url.startsWith('/lab3')) {
-        calculate(req, res);
+        calc(req, res);
     } else {
         res.end('Invalid URL');
     }
 });
 
+// Setup the port to listen on
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
