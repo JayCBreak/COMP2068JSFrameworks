@@ -13,5 +13,6 @@ const mobSchema = new mongoose.Schema({
     gameVersion: { type: String, required: true }
 });
 
+
 // Export the mob model
 module.exports = mongoose.model('Mob', mobSchema);
