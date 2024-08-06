@@ -2,4 +2,44 @@
 
 <a href="/mobs/add" class="btn btn-info">Add a Mob</a>
 
-{{!-- List of Mobs --}}
+{{! List of Mobs }}
+<table>
+  <thead>
+    <th>Image</th>
+    <th>Name</th>
+    <th>HP</th>
+    <th>Attack</th>
+    <th>Item Held</th>
+    <th>Items Dropped</th>
+    <th>Description</th>
+    <th>Game Version</th>
+    <th></th>
+  </thead>
+  <tbody>
+    {{! Retrieve all projects and loop }}
+    {{#each dataset}}
+      <tr>
+        <td><img src={{this.imageURL}} /></td>
+        <td>{{this.name}}</td>
+        <td>{{this.hp}}</td>
+        <td>{{this.attack}}</td>
+        <td>{{this.itemHeld}}</td>
+        <td>{{this.itemsDropped}}</td>
+        <td>{{this.description}}</td>
+        <td>{{this.gameVersion}}</td>
+        <td>
+          {{! TODO update for clipboard copy functionality }}
+          <a href="/mobs/" class="btn btn-info">Copy Summon</a>
+          <a
+            href="/mobs/edit/{{this._id}}"
+            class="btn btn-primary btn-sm"
+          >Edit</a>
+          <a
+            href="/mobs/delete/{{this._id}}"
+            class="btn btn-danger btn-sm"
+          >Delete</a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
