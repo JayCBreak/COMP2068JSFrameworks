@@ -1,6 +1,5 @@
 <h1>{{title}}</h1>
 
-<a href="/mobs/add" class="btn btn-info">Add a Mob</a>
 
 {{! List of Mobs }}
 <table>
@@ -19,7 +18,7 @@
     {{! Retrieve all projects and loop }}
     {{#each dataset}}
       <tr>
-        <td><img src={{this.imageURL}} /></td>
+        <td><img src={{this.imageURL}} alt="Image of {{this.name}}"/></td>
         <td>{{this.name}}</td>
         <td>{{this.hp}}</td>
         <td>{{this.attack}}</td>
@@ -30,17 +29,23 @@
         <td>
           {{! TODO update for clipboard copy functionality }}
           <a href="/mobs/" class="btn btn-info">Copy Summon</a>
-          <a
-            href="/mobs/edit/{{this._id}}"
-            class="btn btn-primary btn-sm"
-          >Edit</a>
-          <a
-            href="/mobs/delete/{{this._id}}"
-            class="btn btn-danger btn-sm"
-            onclick="return deleteConfirmation()"
-          >Delete</a>
+          {{#if ../user}}
+            <a
+              href="/mobs/edit/{{this._id}}"
+              class="btn btn-primary btn-sm"
+            >Edit</a>
+            <a
+              href="/mobs/delete/{{this._id}}"
+              class="btn btn-danger btn-sm"
+              onclick="return deleteConfirmation()"
+            >Delete</a>
+          {{/if}}
         </td>
       </tr>
     {{/each}}
   </tbody>
 </table>
+
+{{#if user}}
+  <a href="/mobs/add" class="btn btn-info">Add a Mob</a>
+{{/if}}

@@ -60,7 +60,6 @@ router.post("/edit/:_id", async (req, res, next) => {
       gameVersion: req.body.gameVersion,
     }
   );
-  await Mob.updateOne({ _id: mobID }, updatedMob);
   res.redirect("/mobs");
 });
 
