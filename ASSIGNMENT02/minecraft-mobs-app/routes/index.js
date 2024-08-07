@@ -48,4 +48,11 @@ router.post("/register", function (req, res, next) {
   );
 });
 
+// GET /logout
+router.get("/logout", function (req, res, next) {
+  req.logout((err) => {
+    res.redirect("/login");
+  });
+});
+
 module.exports = router;
