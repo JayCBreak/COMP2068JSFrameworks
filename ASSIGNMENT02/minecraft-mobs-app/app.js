@@ -15,6 +15,7 @@ var globals = require("./configs/globals"); // Import the global variables
 var passport = require("passport");
 var session = require("express-session");
 var User = require("./models/user");
+var githubStrategy = require("passport-github2").Strategy;
 
 // Import hbs for helper functions
 var hbs = require("hbs");
@@ -45,6 +46,31 @@ app.use("/", indexRouter);
 app.use("/mobs", mobsRouter);
 // Init Passport Strategy
 passport.use(User.createStrategy());
+// Setup github oauth
+passport.use(
+  new githubStrategy(
+    {
+      clientID: globals.Github.clientID,
+      clientSecret: globals.Github.clientSecret,
+      callbackURL: globals.Github.callbackUrl
+    },
+    async (accessToken, refreshToken, profile, done) => {
+      const user = await User.findOne({ oauthId: profile.id });
+      if (user) {
+        return done(null, user);
+      } else {
+        const newUser = new User({
+          username: profile.username,
+          oauthId: profile.id,
+          oauthProvider: "GitHub",
+          created: Date.now()
+        });
+        const savedUser = await newUser.save();
+        return done(null, savedUser);
+      }
+    }
+  )
+);
 //Config passport to serialize and deserialize User
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());

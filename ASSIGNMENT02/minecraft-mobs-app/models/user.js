@@ -10,7 +10,10 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: false,
-    }
+    },
+    oauthId: {type: String},
+    oauthProvider: {type: String},
+    created: {type: Date }
 });
 
 userSchema.plugin(plm);
