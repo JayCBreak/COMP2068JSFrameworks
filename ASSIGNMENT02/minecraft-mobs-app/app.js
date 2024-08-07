@@ -61,8 +61,11 @@ mongoose
   });
 
 // Register hbs helper functions
-hbs.registerHelper("toLowerCase", function (str) {
-  return str.toLowerCase();
+hbs.registerHelper("getSummonCommand", function (name, gameVersion) {
+  // Check if the game version is Minecraft or a mod
+  const summonMod = gameVersion.toLowerCase().includes('minecraft') ? 'minecraft' : gameVersion.toLowerCase();
+  const summonMob = name.toLowerCase();
+  return `/summon ${summonMod}:${summonMob} ~ ~ ~`;
 });
 
 // catch 404 and forward to error handler
