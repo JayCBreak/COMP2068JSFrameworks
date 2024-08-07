@@ -1,8 +1,43 @@
+:root {
+  --background: #cecece;
+  --accent: #429826;
+}
+
+html, body {
+  background-color: var(--background);
+  height: 100%;
+  margin: 0;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
   color: #00b7ff;
+}
+
+header {
+  width: 100%;
+}
+
+.navbar {
+  background-color: var(--accent);
+  padding: 1rem 2rem;
+}
+
+main {
+  flex: 1;
+  padding: 2em;
+}
+
+footer {
+  width: 100%;
+  background-color: var(--accent); /* Light background color similar to navbar */
+  text-align: center;
+  padding: 1em 5em;
+  position: relative;
+  bottom: 0;
 }
