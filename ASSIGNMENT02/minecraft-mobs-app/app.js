@@ -11,20 +11,40 @@ var mobsRouter = require("./routes/mobs");
 var mongoose = require("mongoose");
 var globals = require("./configs/globals"); // Import the global variables
 
+//Import Passport
+var passport = require("passport");
+var session = require("express-session");
+var User = require("./models/user");
+
 var app = express();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
-
+// Middlewares
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+//Config session
+app.use(session({
+  secret: "minecraft-mobs-app",
+  resave: false,
+  saveUninitialized: false
+}));
+//Init passport
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use("/", indexRouter);
 app.use("/mobs", mobsRouter);
+// Init Passport Strategy
+passport.use(User.createStrategy());
+//Config passport to serialize and deserialize User
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // Connect to the MongoDB database
 mongoose

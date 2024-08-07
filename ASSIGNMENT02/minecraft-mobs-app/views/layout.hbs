@@ -13,8 +13,34 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">Home</a>
-        <a class="navbar-brand" href="/mobs">Mobs</a>
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/mobs">Mobs</a>
+            </li>
+          </ul>
+          {{! Login/Register options }}
+          <ul class="navbar-nav ml-auto">
+            {{#if user}}
+              <li class="nav-item">
+                <a class="nav-link" href="#">{{user.username}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+            {{else}}
+              <li class="nav-item">
+                <a class="nav-link" href="/register">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+            {{/if}}
+          </ul>
+        </div>
       </nav>
     </header>
     <main class="container">
@@ -29,5 +55,7 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+    {{! scripts.js local reference }}
+    <script src="javascripts/scripts.js"></script>
   </body>
 </html>
