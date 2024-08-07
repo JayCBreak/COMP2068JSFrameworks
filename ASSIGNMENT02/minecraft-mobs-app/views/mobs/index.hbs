@@ -1,5 +1,10 @@
-<h1>{{title}}</h1>
+<div class="title-container">
+  <h1>{{title}}</h1>
 
+  {{#if user}}
+    <a href="/mobs/add" class="btn btn-info">Add a Mob</a>
+  {{/if}}
+</div>
 
 {{! List of Mobs }}
 <table>
@@ -26,26 +31,16 @@
         <td>{{this.itemsDropped}}</td>
         <td>{{this.description}}</td>
         <td>{{this.gameVersion}}</td>
-        <td>
-          {{! Clipboard copy button to summon the mob }}
-          <button class="btn btn-info summon-button" data-command="{{getSummonCommand this.name this.gameVersion}}">Copy Summon</button>
-          {{#if ../user}}
-            <a
-              href="/mobs/edit/{{this._id}}"
-              class="btn btn-primary btn-sm"
-            >Edit</a>
-            <a
-              href="/mobs/delete/{{this._id}}"
-              class="btn btn-danger btn-sm"
-              onclick="return deleteConfirmation()"
-            >Delete</a>
-          {{/if}}
+         <td>
+          <div class="actions-container">
+            <button class="btn btn-outline-primary summon-button" data-command="{{getSummonCommand this.name this.gameVersion}}">Copy Summon</button>
+            {{#if ../user}}
+              <a href="/mobs/edit/{{this._id}}" class="btn btn-primary btn-sm">Edit</a>
+              <a href="/mobs/delete/{{this._id}}" class="btn btn-danger btn-sm" onclick="return deleteConfirmation()">Delete</a>
+            {{/if}}
+          </div>
         </td>
       </tr>
     {{/each}}
   </tbody>
 </table>
-
-{{#if user}}
-  <a href="/mobs/add" class="btn btn-info">Add a Mob</a>
-{{/if}}

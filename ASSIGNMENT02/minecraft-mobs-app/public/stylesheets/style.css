@@ -27,7 +27,7 @@ header {
 
 .navbar {
   background-color: var(--accent);
-  padding: 1rem 2rem;
+  padding: 1.5rem 5rem;
 }
 
 main {
@@ -38,7 +38,62 @@ main {
   padding: 2em;
 }
 
+/* Login/Register Styling */
 form fieldset {
+  margin-bottom: 1em;
+}
+
+/* Mobs Page Styling */
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5em 10% 20em;
+}
+
+.actions-container {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 1em;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 5em;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 0.8em;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+/* Ensure images don't get too large */
+td img {
+  width: 8em;
+  height: auto;
+  display: block;
+}
+
+th, td {
+  min-width: 5em;
+}
+
+tbody tr {
   margin-bottom: 1em;
 }
 
@@ -48,9 +103,13 @@ form fieldset {
 
 footer {
   width: 100%;
-  background-color: var(--accent); /* Light background color similar to navbar */
+  background-color: var(--accent);
   text-align: center;
-  padding: 2em 5em;
+  padding: 5em 5em;
   position: relative;
   bottom: 0;
+}
+
+footer p {
+  margin: 0;
 }
