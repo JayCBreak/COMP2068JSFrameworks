@@ -16,6 +16,9 @@ var passport = require("passport");
 var session = require("express-session");
 var User = require("./models/user");
 
+// Import hbs for helper functions
+var hbs = require("hbs");
+
 var app = express();
 
 // view engine setup
@@ -56,6 +59,11 @@ mongoose
     console.log("Error connecting to the MongoDB database...");
     console.log(err);
   });
+
+// Register hbs helper functions
+hbs.registerHelper("toLowerCase", function (str) {
+  return str.toLowerCase();
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -28,7 +28,7 @@
         <td>{{this.gameVersion}}</td>
         <td>
           {{! TODO update for clipboard copy functionality }}
-          <a href="/mobs/" class="btn btn-info">Copy Summon</a>
+          <button class="btn btn-info summon-button" data-command="/summon minecraft:{{toLowerCase this.name}} ~ ~ ~">Copy Summon</button>
           {{#if ../user}}
             <a
               href="/mobs/edit/{{this._id}}"
