@@ -1,6 +1,4 @@
-<h1>
-  Login
-</h1>
+<h1>Login</h1>
 
 {{#if messages}}
     <div class="alert alert-danger">
@@ -11,29 +9,57 @@
         Please enter your credentials
     </div>
 {{/if}}
-<form method="post">
-  <fieldset class="form-group">
-    <label for="username" class="col-2 control-label">
-      Username: *
-    </label>
-    <input name="username" id="username" required />
-  </fieldset>
-  <fieldset class="form-group">
-    <label for="password" class="col-2 control-label">
-      Password: *
-    </label>
-    <input name="password" id="password" type="password" required />
-  </fieldset>
-  <fieldset class="form-group">
-    <button class="btn btn-info offset-3">
-      Login
-    </button>
-    <a class="btn btn-info" href="/github">Login with GitHub</a>
-    <hr />
-    Need an account?
-    <a href="/register" title="Register">
-      Register
-    </a>
-  </fieldset>
-</form>
 
+<div class="container">
+  <div class="row align-items-center">
+    <!-- Form on the left -->
+    <div class="col-md-7">
+      <form method="post">
+        <div class="form-group row mb-3">
+          <label for="username" class="col-form-label col-sm-3">Username: *</label>
+          <div class="col-sm-9">
+            <input
+              name="username"
+              id="username"
+              class="form-control"
+              type="email"
+              required
+              placeholder="email@email.com"
+            />
+          </div>
+        </div>
+        <div class="form-group row mb-3">
+          <label for="password" class="col-form-label col-sm-3">Password: *</label>
+          <div class="col-sm-9">
+            <input
+              name="password"
+              id="password"
+              class="form-control"
+              type="password"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary w-100">
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Separator and GitHub login button on the right -->
+    <div class="col-md-1 text-center"></div>
+    <div class="col-md-4 text-center">
+      <span class="d-block mb-3">OR</span>
+      <a class="btn btn-secondary w-100" href="/github">Login with GitHub</a>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="text-center mt-3">
+    Need an account?
+    <a href="/register" title="Register">Register</a>
+  </div>
+</div>

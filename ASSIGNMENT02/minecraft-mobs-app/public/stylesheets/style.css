@@ -18,7 +18,7 @@ body {
 }
 
 a {
-  color: #00b7ff;
+  color: #0e74d3;
 }
 
 header {
@@ -36,6 +36,14 @@ main {
   font-style: normal;
   flex: 1;
   padding: 2em;
+}
+
+form fieldset {
+  margin-bottom: 1em;
+}
+
+.btn-block {
+  width: 100%;
 }
 
 footer {

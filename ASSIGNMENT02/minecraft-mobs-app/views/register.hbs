@@ -1,52 +1,50 @@
-<h1>
-  Register
-</h1>
+<h1>Register</h1>
 <form method="post">
-  <fieldset class="form-group">
-    <label for="username" class="col-2 control-label">
-      Username: *
-    </label>
-    <input
-      name="username"
-      id="username"
-      required
-      type="email"
-      placeholder="email@email.com"
-    />
+  <fieldset class="form-group row">
+    <label for="username" class="col-form-label col-2">Username: *</label>
+    <div class="col-10">
+      <input
+        name="username"
+        id="username"
+        class="form-control"
+        required
+        type="email"
+        placeholder="mail@example.com"
+      />
+    </div>
   </fieldset>
-  <fieldset class="form-group">
-    <label for="password" class="col-2 control-label">
-      Password: *
-    </label>
-    <input
-      name="password"
-      id="password"
-      type="password"
-      required
-      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-    />
+  <fieldset class="form-group row">
+    <label for="password" class="col-form-label col-2">Password: *</label>
+    <div class="col-10">
+      <input
+        name="password"
+        id="password"
+        class="form-control"
+        type="password"
+        required
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+      />
+    </div>
   </fieldset>
-  <fieldset class="form-group">
-    <label for="confirm" class="col-2 control-label">
-      Confirm: *
-    </label>
-    <input
-      name="confirm"
-      id="confirm"
-      type="password"
-      required
-      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-    />
+  <fieldset class="form-group row">
+    <label for="confirm" class="col-form-label col-2">Confirm: *</label>
+    <div class="col-10">
+      <input
+        name="confirm"
+        id="confirm"
+        class="form-control"
+        type="password"
+        required
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+      />
+    </div>
   </fieldset>
-  <fieldset class="form-group">
-    <button class="btn btn-info offset-3">
+  <div class="form-group">
+    <button class="btn btn-primary btn-block">
       Register
     </button>
     <hr />
     Already have an account?
-    <a href="/login" title="Login">
-      Login
-    </a>
-  </fieldset>
+    <a href="/login" title="Login">Login</a>
+  </div>
 </form>
-
