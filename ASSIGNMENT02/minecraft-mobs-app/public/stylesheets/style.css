@@ -10,7 +10,9 @@ html, body {
 }
 
 body {
-  font: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   display: flex;
   flex-direction: column;
 }
@@ -29,6 +31,9 @@ header {
 }
 
 main {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   flex: 1;
   padding: 2em;
 }
@@ -37,7 +42,7 @@ footer {
   width: 100%;
   background-color: var(--accent); /* Light background color similar to navbar */
   text-align: center;
-  padding: 1em 5em;
+  padding: 2em 5em;
   position: relative;
   bottom: 0;
 }
