@@ -1,2 +1,9 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="title-container">
+  <h1>{{title}}</h1>
+</div>
+
+<p>This is Jacob Chotenovsky's second assignment in COMP2068 at Georgian College. I created a comprehensive Minecraft Hostile Mob Database website using Express and Handlebars (HBS) for the front end, enhanced with CSS and Bootstrap for styling. The site includes a homepage, a shared header and footer for consistency, and a read-only database for users who are not logged in. Once users register and log in—either locally or through GitHub—they gain full CRUD (Create, Read, Update, Delete) capabilities. The deployment is handled through cloud hosting, ensuring the site is accessible and reliable.</p>
+
+<p>This app minimizes its hosting footprint by utilizing remote hosting for all mob images, making it easier for end-users to add and change images without high costs or complex API integrations. Additionally, I implemented a handy feature that allows users to copy summon commands directly to their clipboard, facilitated by the clipboardy NPM package. This feature required creating a custom Handlebars function called getSummonCommand in app.js to manage the correct mod and mob names dynamically. Overall, these features add significant functionality and user convenience to the application.</p>
+
+<a class="btn btn-primary add-mob-btn" href="/mobs">All Mobs</a>
