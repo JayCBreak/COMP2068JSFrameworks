@@ -2,7 +2,7 @@
 This is the repository of information regarding Jacob's Assignment 2 for COMP2068 at Georgian College
 
 ## Live Site
-You can find a link to the live site [here]()
+You can find a link to the live site [here](https://comp2068jsframeworks-aq5c.onrender.com)
 
 ## Functionality
 1. A full website using Express with HBS using CSS and bootstrap for styling
