@@ -2,7 +2,7 @@
   <h1>{{title}}</h1>
 
   {{#if user}}
-    <a href="/mobs/add" class="btn btn-info">Add a Mob</a>
+    <a href="/mobs/add" class="btn btn-info add-mob-btn">Add a New Mob</a>
   {{/if}}
 </div>
 
@@ -23,7 +23,7 @@
     {{! Retrieve all projects and loop }}
     {{#each dataset}}
       <tr>
-        <td><img src={{this.imageURL}} alt="Image of {{this.name}}"/></td>
+        <td><img src="{{this.imageURL}}" alt="Image of {{this.name}}"/></td>
         <td>{{this.name}}</td>
         <td>{{this.hp}}</td>
         <td>{{this.attack}}</td>
@@ -33,9 +33,9 @@
         <td>{{this.gameVersion}}</td>
          <td>
           <div class="actions-container">
-            <button class="btn btn-outline-primary summon-button" data-command="{{getSummonCommand this.name this.gameVersion}}">Copy Summon</button>
+            <button class="btn btn-primary summon-button" data-command="{{getSummonCommand this.name this.gameVersion}}">Copy Summon</button>
             {{#if ../user}}
-              <a href="/mobs/edit/{{this._id}}" class="btn btn-primary btn-sm">Edit</a>
+              <a href="/mobs/edit/{{this._id}}" class="btn btn-info btn-sm">Edit</a>
               <a href="/mobs/delete/{{this._id}}" class="btn btn-danger btn-sm" onclick="return deleteConfirmation()">Delete</a>
             {{/if}}
           </div>

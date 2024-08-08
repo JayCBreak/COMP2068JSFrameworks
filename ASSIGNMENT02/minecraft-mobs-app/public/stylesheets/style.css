@@ -48,7 +48,7 @@ form fieldset {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 5em 10% 20em;
+  margin: 5em 5% 10em;
 }
 
 .actions-container {
@@ -57,11 +57,48 @@ form fieldset {
   gap: 1em;
 }
 
+.add-mob-btn {
+  padding: 0.5em 2em;
+}
+
+/* Add and Edit Page Styling */
+fieldset {
+  display: flex;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  flex-grow: 1;
+  width: calc(100% - 160px);
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+}
+
 /* Table Styling */
 table {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 5em;
+}
+
+th {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 th, td {
@@ -84,9 +121,11 @@ tr:nth-child(odd) {
 
 /* Ensure images don't get too large */
 td img {
-  width: 8em;
+  max-width: 8em;
   height: auto;
+  max-height: 10em;
   display: block;
+  margin: 0 auto;
 }
 
 th, td {

@@ -2,36 +2,36 @@
 <h1>{{title}}</h1>
 <form method="post">
   <fieldset>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required />
+    <label class="col-md-1" for="name">Name:</label>
+    <input class="col-md-11" type="text" id="name" name="name" required value="{{mob.name}}" />
   </fieldset>
   <fieldset>
-    <label for="imageURL">Image URL:</label>
-    <input type="text" id="imageURL" name="imageURL" required />
+    <label class="col-md-1" for="imageURL">Image URL:</label>
+    <input class="col-md-11" type="text" id="imageURL" name="imageURL" required value="{{mob.imageURL}}" />
   </fieldset>
   <fieldset>
-    <label for="hp">HP:</label>
-    <input type="number" id="hp" name="hp" required />
+    <label class="col-md-1" for="hp">HP:</label>
+    <input class="col-md-11" type="number" id="hp" name="hp" required value="{{mob.hp}}" />
   </fieldset>
   <fieldset>
-    <label for="attack">Attack:</label>
-    <input type="number" id="attack" name="attack" required />
+    <label class="col-md-1" for="attack">Attack:</label>
+    <input class="col-md-11" type="number" id="attack" name="attack" required value="{{mob.attack}}" />
   </fieldset>
   <fieldset>
-    <label for="itemHeld">Item held:</label>
-    <input type="text" id="itemHeld" name="itemHeld" required />
+    <label class="col-md-1" for="itemHeld">Item held:</label>
+    <input class="col-md-11" type="text" id="itemHeld" name="itemHeld" required value="{{mob.itemHeld}}" />
   </fieldset>
   <fieldset>
-    <label for="itemsDropped">Items dropped:</label>
-    <input type="text" id="itemsDropped" name="itemsDropped" required />
+    <label class="col-md-1" for="itemsDropped">Items dropped:</label>
+    <input class="col-md-11" type="text" id="itemsDropped" name="itemsDropped" required value="{{mob.itemsDropped}}" />
   </fieldset>
   <fieldset>
-    <label for="description">Description:</label>
-    <input type="text" id="description" name="description" required />
+    <label class="col-md-1" for="description">Description:</label>
+    <textarea class="col-md-11" id="description" name="description" required>{{mob.description}}</textarea>
   </fieldset>
   <fieldset>
-    <label for="gameVersion">Game version:</label>
-    <input type="text" id="gameVersion" name="gameVersion" required />
+    <label class="col-md-1" for="gameVersion">Game version:</label>
+    <input class="col-md-11" type="text" id="gameVersion" name="gameVersion" required value="{{mob.gameVersion}}" />
   </fieldset>
-  <button class="btn btn-primary">Save New Mob</button>
+  <button class="btn btn-primary col-md-12">Save Mob</button>
 </form>

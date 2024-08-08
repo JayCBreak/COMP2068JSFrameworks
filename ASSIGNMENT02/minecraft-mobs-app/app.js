@@ -90,7 +90,7 @@ mongoose
 hbs.registerHelper("getSummonCommand", function (name, gameVersion) {
   // Check if the game version is Minecraft or a mod
   const summonMod = gameVersion.toLowerCase().includes('minecraft') ? 'minecraft' : gameVersion.toLowerCase();
-  const summonMob = name.toLowerCase();
+  const summonMob = name.toLowerCase().replace(/ /g, '_');
   return `/summon ${summonMod}:${summonMob} ~ ~ ~`;
 });
 
